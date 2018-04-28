@@ -26,7 +26,7 @@ Public Function Converter(pdblValor As Double, ByRef pstrValorExtenso As String)
    intCentavos = retornaCentavos(pdblValor)
    lngValorInteiro = retornaValorInteiro(pdblValor)
    If intCentavos > 0 Then
-      
+      strCentavos = converterValorExtenso(intCentavos)
    Else
       'se não tem centavos, define zero
       strCentavos = " e zero centavos"

@@ -19,9 +19,11 @@ Public Function retornaValorInteiro(pdblValor As Double) As Long
    End If
 End Function
 
-Public Function converteValorExtenso(plngValor As Long) As String
+Public Function converterValorExtensoUnidade(pintValor As Integer) As String
+   Dim intUnidade As Integer
+   
       Select Case plngValor
-         Case 0: converteValorExtenso = "zero"
+'         Case 0: converteValorExtenso = "zero"
          Case 1: converteValorExtenso = "um"
          Case 2: converteValorExtenso = "dois"
          Case 3: converteValorExtenso = "três"
@@ -32,28 +34,32 @@ Public Function converteValorExtenso(plngValor As Long) As String
          Case 8: converteValorExtenso = "oito"
          Case 9: converteValorExtenso = "nove"
          Case 10: converteValorExtenso = "dez"
-         Case 11: converteValorExtenso = "onze"
-         Case 12: converteValorExtenso = "doze"
-         Case 13: converteValorExtenso = "treze"
-         Case 14: converteValorExtenso = "quatorze"
-         Case 15: converteValorExtenso = "quinze"
-         Case 16: converteValorExtenso = "dezesseis"
-         Case 17: converteValorExtenso = "dezessete"
-         Case 18: converteValorExtenso = "dezoito"
-         Case 19: converteValorExtenso = "dezenove"
-         Case 20: converteValorExtenso = "vinte"
-         Case 30: converteValorExtenso = "trinta"
-         Case 40: converteValorExtenso = "quarenta"
-         Case 50: converteValorExtenso = "cinquenta"
-         Case 60: converteValorExtenso = "sessenta"
-         Case 70: converteValorExtenso = "setenta"
-         Case 80: converteValorExtenso = "oitenta"
-         Case 90: converteValorExtenso = "noventa"
-         
-         
+'         Case 11: converteValorExtenso = "onze"
+'         Case 12: converteValorExtenso = "doze"
+'         Case 13: converteValorExtenso = "treze"
+'         Case 14: converteValorExtenso = "quatorze"
+'         Case 15: converteValorExtenso = "quinze"
+'         Case 16: converteValorExtenso = "dezesseis"
+'         Case 17: converteValorExtenso = "dezessete"
+'         Case 18: converteValorExtenso = "dezoito"
+'         Case 19: converteValorExtenso = "dezenove"
+'         Case Else
+'            intUnidade = plngValor - CLng(Left(CStr(plngValor), 1) & "0")
       End Select
   
    
 End Function
 
+Public Function converterValorExtensoDezenas(pintValor As Integer) As String
+         Case 1: converteValorExtenso = "dez"
+         Case 2: converteValorExtenso = "vinte"
+         Case 3: converteValorExtenso = "trinta"
+         Case 4: converteValorExtenso = "quarenta"
+         Case 5: converteValorExtenso = "cinquenta"
+         Case 6: converteValorExtenso = "sessenta"
+         Case 7: converteValorExtenso = "setenta"
+         Case 8: converteValorExtenso = "oitenta"
+         Case 9: converteValorExtenso = "noventa"
+
+End Function
 
