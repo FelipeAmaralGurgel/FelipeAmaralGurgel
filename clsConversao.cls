@@ -17,7 +17,7 @@ Public Function Converter()
 On Error Resume Next
    Dim strValor As String
    Dim strCentavos As String
-   Dim strValorInteiro As Long
+   Dim strValorInteiro As String
    Dim strValorExtenso As String
    Dim strReais As String
    
@@ -42,7 +42,7 @@ On Error Resume Next
    
    If Val(strValorInteiro) > 0 Then
       If Mid(strValorInteiro, 1, 1) = 1 Then
-        strValorExtenso = converterValorExtensoDez(strCentavos)
+        strValorExtenso = converterValorExtensoDez(strValorInteiro)
       Else
         strValorExtenso = converterValorExtensoDezenas(Left(strCentavos, 1)) & " e "
         strValorExtenso = strValorExtenso & converterValorExtensoUnidade(Right(strCentavos, 1))
