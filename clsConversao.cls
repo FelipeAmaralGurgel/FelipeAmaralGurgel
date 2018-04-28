@@ -14,6 +14,7 @@ Attribute VB_Exposed = False
 Option Explicit
 
 Public Function Converter()
+On Error Resume Next
    Dim strValor As String
    Dim strCentavos As String
    Dim strValorInteiro As Long
@@ -35,16 +36,26 @@ Public Function Converter()
       Else
         strValorExtenso = converterValorExtensoDezenas(Left(strCentavos, 1)) & " e "
         strValorExtenso = strValorExtenso & converterValorExtensoUnidade(Right(strCentavos, 1))
-         
       End If
       strValorExtenso = strValorExtenso & " centavos"
-   Else
-      'se não tem centavos, define zero
-      strCentavos = " e zero centavos"
    End If
    
-   MsgBox "Valor por extenso: " & vbCrLf & strValorExtenso, vbInformation + vbOKOnly, "Valor por Extenso"
+   If Val(strValorInteiro) > 0 Then
+      If Mid(strValorInteiro, 1, 1) = 1 Then
+        strValorExtenso = converterValorExtensoDez(strCentavos)
+      Else
+        strValorExtenso = converterValorExtensoDezenas(Left(strCentavos, 1)) & " e "
+        strValorExtenso = strValorExtenso & converterValorExtensoUnidade(Right(strCentavos, 1))
+      End If
+      strValorExtenso = strValorExtenso & " centavos"
+   End If
    
+   
+   If Len(strValorExtenso) > 0 Then
+      MsgBox "Valor por extenso: " & vbCrLf & strValorExtenso, vbInformation + vbOKOnly, "Valor por Extenso"
+   Else
+      MsgBox "Não foi informado nenhum valor", vbInformation + vbOKOnly, "Não há informação"
+   End If
 
 End Function
 

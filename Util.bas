@@ -22,16 +22,16 @@ End Function
 Public Function converterValorExtensoUnidade(pstrValor As Integer) As String
    Dim intUnidade As Integer
    
-      Select Case plngValor
-         Case 1: converteValorExtenso = "um"
-         Case 2: converteValorExtenso = "dois"
-         Case 3: converteValorExtenso = "três"
-         Case 4: converteValorExtenso = "quatro"
-         Case 5: converteValorExtenso = "cinco"
-         Case 6: converteValorExtenso = "seis"
-         Case 7: converteValorExtenso = "sete"
-         Case 8: converteValorExtenso = "oito"
-         Case 9: converteValorExtenso = "nove"
+      Select Case pstrValor
+         Case 1: converterValorExtensoUnidade = "um"
+         Case 2: converterValorExtensoUnidade = "dois"
+         Case 3: converterValorExtensoUnidade = "três"
+         Case 4: converterValorExtensoUnidade = "quatro"
+         Case 5: converterValorExtensoUnidade = "cinco"
+         Case 6: converterValorExtensoUnidade = "seis"
+         Case 7: converterValorExtensoUnidade = "sete"
+         Case 8: converterValorExtensoUnidade = "oito"
+         Case 9: converterValorExtensoUnidade = "nove"
 '         Case Else
 '            intUnidade = plngValor - CLng(Left(CStr(plngValor), 1) & "0")
       End Select
@@ -41,29 +41,29 @@ End Function
 
 Public Function converterValorExtensoDez(pstrValor As String) As String
    Select Case pstrValor
-      Case 10: converteValorExtenso = "dez"
-      Case 11: converteValorExtenso = "onze"
-      Case 12: converteValorExtenso = "doze"
-      Case 13: converteValorExtenso = "treze"
-      Case 14: converteValorExtenso = "quatorze"
-      Case 15: converteValorExtenso = "quinze"
-      Case 16: converteValorExtenso = "dezesseis"
-      Case 17: converteValorExtenso = "dezessete"
-      Case 18: converteValorExtenso = "dezoito"
-      Case 19: converteValorExtenso = "dezenove"
+      Case 10: converterValorExtensoDez = "dez"
+      Case 11: converterValorExtensoDez = "onze"
+      Case 12: converterValorExtensoDez = "doze"
+      Case 13: converterValorExtensoDez = "treze"
+      Case 14: converterValorExtensoDez = "quatorze"
+      Case 15: converterValorExtensoDez = "quinze"
+      Case 16: converterValorExtensoDez = "dezesseis"
+      Case 17: converterValorExtensoDez = "dezessete"
+      Case 18: converterValorExtensoDez = "dezoito"
+      Case 19: converterValorExtensoDez = "dezenove"
    End Select
 End Function
 
 Public Function converterValorExtensoDezenas(pstrValor As String) As String
    Select Case pstrValor
-      Case 2: converteValorExtenso = "vinte"
-      Case 3: converteValorExtenso = "trinta"
-      Case 4: converteValorExtenso = "quarenta"
-      Case 5: converteValorExtenso = "cinquenta"
-      Case 6: converteValorExtenso = "sessenta"
-      Case 7: converteValorExtenso = "setenta"
-      Case 8: converteValorExtenso = "oitenta"
-      Case 9: converteValorExtenso = "noventa"
+      Case 2: converterValorExtensoDezenas = "vinte"
+      Case 3: converterValorExtensoDezenas = "trinta"
+      Case 4: converterValorExtensoDezenas = "quarenta"
+      Case 5: converterValorExtensoDezenas = "cinquenta"
+      Case 6: converterValorExtensoDezenas = "sessenta"
+      Case 7: converterValorExtensoDezenas = "setenta"
+      Case 8: converterValorExtensoDezenas = "oitenta"
+      Case 9: converterValorExtensoDezenas = "noventa"
    End Select
 End Function
 
