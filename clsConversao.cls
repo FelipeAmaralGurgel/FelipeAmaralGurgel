@@ -16,10 +16,12 @@ Option Explicit
 Public Function Converter(pdblValor As Double, ByRef pstrValorExtenso As String)
    Dim strReais As String
    Dim strCentavos As String
+   Dim intCentavos As Integer
    
    strReais = "Alguns reais"
    strCentavos = " e alguns centavos"
    If InStr(CStr(pdblValor), ",") > 0 Then
+      intCentavos = Right(CStr(pdblValor), Len(CStr(pdblValor)) - InStr(CStr(pdblValor), ","))
       
    Else
       strCentavos = " e zero centavos"

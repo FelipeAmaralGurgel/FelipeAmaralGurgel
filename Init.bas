@@ -5,5 +5,7 @@ Public Sub main()
    Dim objConversao As New clsConversao
    Dim strValorExtenso As String
    
-   Call objConversao.Converter(1.5, strValorExtenso)
+   Call objConversao.Converter(947.71, strValorExtenso)
+   
+   MsgBox ("Você converteu " & strValorExtenso)
 End Sub
