@@ -17,12 +17,14 @@ Public Function Converter(pdblValor As Double, ByRef pstrValorExtenso As String)
    Dim strReais As String
    Dim strCentavos As String
    Dim intCentavos As Integer
+   Dim lngValorInteiro As Long
    
    'Define valor padrão para o usuário não ficar sem retorno
    strReais = "Alguns reais"
    strCentavos = " e alguns centavos"
    'Pega somente o valor dos centavos
    intCentavos = retornaCentavos(pdblValor)
+   lngValorInteiro = retornaValorInteiro(pdblValor)
    If intCentavos > 0 Then
       
    Else

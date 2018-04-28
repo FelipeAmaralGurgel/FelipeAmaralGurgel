@@ -6,7 +6,7 @@ Public Sub main()
    Dim strValorExtenso As String
    
    'A classe clsConversao é responsável por todos os tratamentos para exibir valores
-   Call objConversao.Converter(947.71, strValorExtenso)
+   Call objConversao.Converter(50500.71, strValorExtenso)
    
    MsgBox ("Você converteu " & strValorExtenso)
 End Sub
