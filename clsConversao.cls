@@ -18,16 +18,20 @@ Public Function Converter(pdblValor As Double, ByRef pstrValorExtenso As String)
    Dim strCentavos As String
    Dim intCentavos As Integer
    
+   'Define valor padrão para o usuário não ficar sem retorno
    strReais = "Alguns reais"
    strCentavos = " e alguns centavos"
-   If InStr(CStr(pdblValor), ",") > 0 Then
-      intCentavos = Right(CStr(pdblValor), Len(CStr(pdblValor)) - InStr(CStr(pdblValor), ","))
+   'Pega somente o valor dos centavos
+   intCentavos = retornaCentavos(pdblValor)
+   If intCentavos > 0 Then
       
    Else
+      'se não tem centavos, define zero
       strCentavos = " e zero centavos"
    End If
    
-  pstrValorExtenso = strReais & strCentavos
+   'Retorna o valor dos reais concatenados com centavos
+   pstrValorExtenso = strReais & strCentavos
    
 
 End Function
