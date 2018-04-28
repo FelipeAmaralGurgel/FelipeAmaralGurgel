@@ -13,7 +13,20 @@ Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = False
 Option Explicit
 
-Private Function Converter()
+Public Function Converter(pdblValor As Double, ByRef pstrValorExtenso As String)
+   Dim strReais As String
+   Dim strCentavos As String
+   
+   strReais = "Alguns reais"
+   strCentavos = " e alguns centavos"
+   If InStr(CStr(pdblValor), ",") > 0 Then
+      
+   Else
+      strCentavos = " e zero centavos"
+   End If
+   
+  pstrValorExtenso = strReais & strCentavos
+   
 
 End Function
 
