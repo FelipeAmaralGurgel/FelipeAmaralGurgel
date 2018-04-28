@@ -13,27 +13,37 @@ Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = False
 Option Explicit
 
-Public Function Converter(pdblValor As Double, ByRef pstrValorExtenso As String)
-   Dim strReais As String
+Public Function Converter()
+   Dim strValor As String
    Dim strCentavos As String
-   Dim intCentavos As Integer
-   Dim lngValorInteiro As Long
+   Dim strValorInteiro As Long
+   Dim strValorExtenso As String
+   Dim strReais As String
    
    'Define valor padrão para o usuário não ficar sem retorno
-   strReais = "Alguns reais"
-   strCentavos = " e alguns centavos"
+   strValor = Format(InputBox("Valor: ", "Extenso"), "#,##0.00")
+   
+   strCentavos = Right(strValor, 2)
+   
    'Pega somente o valor dos centavos
-   intCentavos = retornaCentavos(pdblValor)
-   lngValorInteiro = retornaValorInteiro(pdblValor)
-   If intCentavos > 0 Then
-      strCentavos = converterValorExtenso(intCentavos)
+   strCentavos = retornaCentavos(strValor)
+   strValorInteiro = retornaValorInteiro(strValor)
+   
+   If Val(strCentavos) > 0 Then
+      If Mid(strCentavos, 1, 1) = 1 Then
+        strValorExtenso = converterValorExtensoDez(strCentavos)
+      Else
+        strValorExtenso = converterValorExtensoDezenas(Left(strCentavos, 1)) & " e "
+        strValorExtenso = strValorExtenso & converterValorExtensoUnidade(Right(strCentavos, 1))
+         
+      End If
+      strValorExtenso = strValorExtenso & " centavos"
    Else
       'se não tem centavos, define zero
       strCentavos = " e zero centavos"
    End If
    
-   'Retorna o valor dos reais concatenados com centavos
-   pstrValorExtenso = strReais & strCentavos
+   MsgBox "Valor por extenso: " & vbCrLf & strValorExtenso, vbInformation + vbOKOnly, "Valor por Extenso"
    
 
 End Function
